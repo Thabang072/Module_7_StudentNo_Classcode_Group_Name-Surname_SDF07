@@ -1,24 +1,250 @@
-/* Base Styles */
-
-:root {
-    font-size: 10px;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: "Open Sans", Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #fafafa;
-    color: #262626;
-    padding-bottom: 3rem;
+    background-color: rgb(177, 165, 177);
 }
-  
-img {
-    display: block;
-  }
-  
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #ece7e7;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.profile-image {
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0px 5px 8px rgb(26, 118, 26);
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.profile-image img {
+    width: 100px; 
+    height: 100px; 
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    max-width: 700px;
+}
+
+.profile-user-settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile-user-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    flex: 0 0 auto;
+}
+
+.btn-profile-edit-btn
+{
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.btn-profile-settings-btn {
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.profile-stats ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.profile-stats li {
+    font-size: 1em;
+}
+
+.profile-stats-count {
+    font-weight: bold;
+}
+
+.profile-bio {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    .profile {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .profile-image img {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .profile-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-user-settings {
+        flex-direction: grid;
+        gap: 5px;
+    }
+
+    .profile-user-name {
+        font-size: 2em;
+    }
+
+    .profile-stats ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-stats li {
+        margin: 5px 0;
+    }
+
+    .profile-bio {
+        padding: 0 10px;
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 100%; 
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 20px;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus img {
+    opacity: 0.8;
+}
+
+@media only screen and (min-width: 400px) {
+    .profile {
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info {
+        margin: 20px 0;
+    }
+
+    .username {
+        font-size: 20%;
+    }
+}
+
+.profile-user-settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-profile-edit-btn,
+.btn-profile-settings-btn {
+    flex: 0 0 auto;
+}
+
+.profile-stats ul {
+    display: flex;
+    gap: 30px;
+    padding: 0%;
+    margin: 0cm;
+    list-style: none;
+}
+
+.profile-stats li {
+    font-size: 1.em;
+}
+
+.profile-stats-count {
+    font-weight: bolder;
+}
+
+.profile-bio {
+    font-size: 1.em;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .profile {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .profile-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-user-settings {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .profile-stats ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-stats li {
+        margin: 5% 0;
+    }
+
+    .profile-bio {
+        padding: 0 10px;
+    }
+}
+
+.loader {
+    position: fixed;
+    left: 50%;
+    bottom: 0; 
+    width: 60px;
+    opacity: 1;
+    height: 60px;
+    margin-left: -30px; 
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #464a47;
+    border-radius: 50%;
+    animation: spin 1s ease infinite;
+    z-index: 999999;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.gallery {
+    cursor: pointer;
+}
